@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Periodic Quest!</title>
+  <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+  <div class="container">
+    <h1>Periodic Quest!</h1>
+    <div class="menu">
+      <button onclick="showAllElements()">Show All Elements</button>
+      <button onclick="toggleSearch()">Search Element</button>
+      <button onclick="toggleHidden()">Find Elements in Name</button>
+      <button onclick="showHistory()">Search History</button>
+    </div>
+
+    <div id="searchSection" class="section hidden">
+      <div class="outerDiv">
+        <span style="float: right; cursor: pointer;" onclick="toggleSearch()">&#10005;</span>
+        <label class="label" for="searchInput">Enter element name or symbol</label>
+        <div>
+          <input type="text" id="searchInput" placeholder="Enter element name or symbol" />
+          <button id="searchBtn" onclick="performSearch()">Search</button>
+        </div>
+      </div>
+      <!-- <div id="searchResult"></div> -->
+    </div>
+
+    <div id="hiddenSection" class="section hidden">
+      <div class="outerDiv">
+        <span style="float: right; cursor: pointer;" onclick="toggleHidden()">&#10005;</span>
+        <label class="label" for="nameInput">Enter your name</label>
+        <div id="innerDiv">
+          <input type="text" id="nameInput" placeholder="Enter your name" />
+          <button id="findBtn" onclick="findElementsInName()">Find</button>
+        </div>
+      </div>
+      <!-- <div id="hiddenResults"></div> -->
+    </div>
+
+    <div id="elementsGrid" class="grid"></div>
+    <div id="history"></div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="index.js"></script>
+</body>
+
+</html>
